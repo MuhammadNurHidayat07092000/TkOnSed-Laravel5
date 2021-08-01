@@ -19,8 +19,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body>
+<body> 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -76,6 +77,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @include('sweet::alert')
     </div>
+    
 </body>
 </html>

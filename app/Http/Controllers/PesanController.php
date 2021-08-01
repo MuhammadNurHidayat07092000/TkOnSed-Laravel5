@@ -8,6 +8,9 @@ use App\PesananDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; //menangkap id yang sedang aktif
 use Carbon\Carbon; //tanggal
+use App\Providers\SweetAlertServiceProvider;
+use UxWeb\SweetAlert\SweetAlert;
+
 
 class PesanController extends Controller
 {
@@ -73,6 +76,7 @@ class PesanController extends Controller
         $pesanan->jumlah_harga = $pesanan->jumlah_harga + $barang->harga * $request->jumlah_pesan;
         $pesanan->update();
 
+        alert()->success('pesanan masuk kerangjang!', 'Success!');
         return redirect('home');
     }
 }
